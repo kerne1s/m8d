@@ -23,6 +23,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@m8d/web/home/features/view": ["libs/web/home/features/view/src/index.ts"],
+      "@m8d/web/home/ui/wrapper": ["libs/web/home/ui/wrapper/src/index.ts"],
+      "@m8d/web/shared/ui/styles/global": ["libs/web/shared/ui/styles/global.scss"],
+      "@m8d/web/shared/ui/styles/variables": ["libs/web/shared/ui/styles/_variables.scss"],
       "@m8d/web/shared/utils/app-env": ["libs/web/shared/utils/app-env/src/index.ts"],
       "@m8d/web/shared/utils/i18n": ["libs/web/shared/utils/i18n/src/index.ts"]
     }

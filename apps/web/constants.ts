@@ -7,5 +7,5 @@ interface Constants {
 
 export const constants: Constants = {
   defaultLocale: 'en',
-  locales: ['en'],
+  locales: ['en', 'ru'],
 };

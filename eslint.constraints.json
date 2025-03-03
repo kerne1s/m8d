@@ -30,5 +30,9 @@
   {
     "sourceTag": "app:web",
     "onlyDependOnLibsWithTags": ["app:web", "app:shared"]
+  },
+  {
+    "sourceTag": "scope:home",
+    "onlyDependOnLibsWithTags": ["scope:home", "scope:shared"]
   }
 ]

@@ -1,0 +1,9 @@
+{
+  "name": "web/home/features/view",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/home/features/view/src",
+  "projectType": "library",
+  "tags": ["app:web", "scope:home", "type:features"],
+  "// targets": "to see all targets run: nx show project web/home/features/view --web",
+  "targets": {}
+}
