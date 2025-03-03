@@ -1,6 +1,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "jsx": "react-native",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -14,7 +22,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@m8d/web/shared/utils/app-env": ["libs/web/shared/utils/app-env/src/index.ts"],
+      "@m8d/web/shared/utils/i18n": ["libs/web/shared/utils/i18n/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
