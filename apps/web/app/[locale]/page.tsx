@@ -1,8 +1,13 @@
-import { useTranslations } from 'next-intl';
 import { ReactElement } from 'react';
+import { HomeView } from '@m8d/web/home/features/view';
+import { HomeWrapper } from '@m8d/web/home/ui/wrapper';
 
 export default function Index(): ReactElement {
-  const t = useTranslations('web-shared.HOME_PAGE');
-
-  return <div>{t('HOME_PAGE_TEXT')}</div>;
+  return (
+    <main>
+      <HomeWrapper>
+        <HomeView />
+      </HomeWrapper>
+    </main>
+  );
 }

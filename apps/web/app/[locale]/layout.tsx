@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ReactElement, ReactNode } from 'react';
 import { constants } from '../../constants';
+import '@m8d/web/shared/ui/styles/global';
+import { Providers } from './providers';
 
 import type { Locale } from '@m8d/web/shared/utils/i18n';
 
@@ -32,13 +34,15 @@ export default async function RootLayout({ children, params }: RootLayoutProps):
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className='no-scrollbar overflow-hidden'>
       <head>
         <meta name='robots' content={process.env.NEXT_PUBLIC_APP_ENV === 'production' ? 'index' : 'noindex'} />
       </head>
       <body>
-        <NextIntlClientProvider messages={pick(messages, 'web-shared')} locale={locale}>
-          {children}
+        <NextIntlClientProvider messages={pick(messages, 'web-shared', 'home')} locale={locale}>
+          <Providers>
+            {children}            
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
