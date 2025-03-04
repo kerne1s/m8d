@@ -1,4 +1,6 @@
+import clsx from 'clsx';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { ReactElement } from 'react';
 import LoginIcon from '../../assets/login.svg';
 import LogoutIcon from '../../assets/logout.svg';
@@ -9,8 +11,15 @@ interface HomePanelProps {
 }
 
 export function HomePanel({ isHomeClosed, onClosePressed }: HomePanelProps): ReactElement {
+  const t = useTranslations('home.HOME.PANEL');
+
   return (
-    <aside className='h-[40px] w-full flex absolute top-0 left-0 right-0 z-[1000] bg-gray-300 blur-lg hover:blur-none transition-[filter] duration-300 ease-out px-4'>
+    <aside
+      className={clsx(
+        'h-[40px] w-full flex absolute top-0 left-0 right-0 z-[1000] bg-gray-300 transition-[filter] duration-300 ease-out px-4 animate-blur hover:!blur-none',
+        'flex items-center',
+      )}>
+      <span className='text-lg font-bold text-gray-500'>{t('TEXT_APP')}</span>
       <button onClick={onClosePressed} className='ml-auto'>
         <Image
           src={isHomeClosed ? LoginIcon : LogoutIcon}
@@ -19,5 +28,5 @@ export function HomePanel({ isHomeClosed, onClosePressed }: HomePanelProps): Rea
           height={24} />
       </button>
     </aside>
-  )
+  );
 }

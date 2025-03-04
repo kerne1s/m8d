@@ -5,7 +5,9 @@ import clsx from 'clsx';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { ReactElement, useRef } from 'react';
+import { useTranslations } from 'next-intl';
+import { ReactElement, useEffect, useRef } from 'react';
+import { useNotification } from '@m8d/web/shared/features/notification';
 import FlowersImage from './assets/flowers.jpg';
 import RiverImage from './assets/river.jpg';
 import SunriseImage from './assets/sunrise.jpg';
@@ -16,9 +18,11 @@ import { useRandomQuotes } from './hooks';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function HomeView(): ReactElement {
+  const t = useTranslations('home.HOME');
   const quotes = useRandomQuotes(4);
   const hasQuotes = !!quotes.length;
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { showNotification, notificationComponent} = useNotification();
 
   useGSAP(() => {
     ScrollTrigger.defaults({
@@ -36,6 +40,10 @@ export function HomeView(): ReactElement {
       ease: 'none',
     })
   }, { scope: sliderRef });
+
+  useEffect(() => {
+    showNotification(t('NOTIFICATIONS.TEXT_WELCOME'));
+  }, []);
 
   return (
     <div ref={sliderRef} className={clsx('home min-h-screen no-scrollbar', styles.slider)}>
@@ -95,6 +103,7 @@ export function HomeView(): ReactElement {
           </p>
         </div>}
       </div>
+      {notificationComponent}
     </div>
   );
 }
