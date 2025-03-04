@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { useTranslations } from 'next-intl';
 import { ReactElement } from 'react';
 
 interface NotificationProps {
@@ -10,8 +9,6 @@ interface NotificationProps {
 }
 
 export function Notification({ title, message, onMouseEnter, onMouseLeave }: NotificationProps): ReactElement {
-  const t = useTranslations('web-shared.NOTIFICATIONS');
-
   return (
     <div
       onMouseEnter={onMouseEnter}
@@ -21,7 +18,7 @@ export function Notification({ title, message, onMouseEnter, onMouseLeave }: Not
         'flex flex-col gap-2 opacity-[0.75] hover:opacity-[1] transition-opacity duration-300 ease-out',
       )}>
       <div>
-        <span className='text-sm'>{title || t('TEXT_DEFAULT_TITLE')}</span>
+        <span className='text-sm'>{title || 'M8D App'}</span>
       </div>
       <p>{message}</p>
     </div>
