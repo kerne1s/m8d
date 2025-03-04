@@ -1,6 +1,12 @@
 {
   "HOME": {
     "TEXT_TITLE": "Welcome to M8D Web Home",
-    "TEXT_SEE_YOU_LATER": "See you later"
+    "TEXT_SEE_YOU_LATER": "See you later",
+    "NOTIFICATIONS": {
+      "TEXT_WELCOME": "Good to see you!"
+    },
+    "PANEL": {
+      "TEXT_APP": "M8D"
+    }
   }
 }
