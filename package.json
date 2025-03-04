@@ -6,6 +6,7 @@
     "lint": "npx tsc && npx eslint ./",
     "format": "npx prettier --write . && npm run lint -- --fix",
     "prepare": "husky install",
+    "build": "npx nx build web",
     "deps:sync": "npx syncpack fix-mismatches"
   },
   "private": true,
