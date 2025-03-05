@@ -7,9 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { ReactElement, useEffect, useRef } from 'react';
+import Snowfall from 'react-snowfall';
 import { useNotification } from '@m8d/web/shared/features/notification';
-import FlowersImage from './assets/flowers.jpg';
-import RiverImage from './assets/river.jpg';
 import SunriseImage from './assets/sunrise.jpg';
 import SunsetImage from './assets/sunset.jpg';
 import styles from './component.module.scss';
@@ -29,16 +28,6 @@ export function HomeView(): ReactElement {
       toggleActions: 'restart pause resume pause',
       scroller: sliderRef.current,
     });
-
-    gsap.to('.slide_3', {
-      scrollTrigger: {
-        trigger: '.slide_3',
-        toggleActions: 'restart pause reverse pause'
-      },
-      duration: 1, 
-      backgroundColor: '#FFA500', 
-      ease: 'none',
-    })
   }, { scope: sliderRef });
 
   useEffect(() => {
@@ -53,20 +42,25 @@ export function HomeView(): ReactElement {
           alt='Sunrise Image'
           fill
           className='object-cover' />
+        <Snowfall />
         {hasQuotes && <div className='absolute inset-0 flex justify-center items-center text-3xl italic text-white px-4'>
-          <p className='md:max-w-[50%] backdrop-blur-md p-3 rounded-xl border border-white'>
+          <p className='md:max-w-[50%] animate-fade-in backdrop-blur-md p-3 rounded-xl border border-white'>
             {quotes[0].quote}
             {quotes[0].author && ' - '}
             <span className='not-italic'>{quotes[0].author}</span>
           </p>
         </div>}
       </div>
+
       <div className={clsx('relative w-full h-screen slide_2', styles.slider__item)}>
-        <Image
-          src={RiverImage}
-          alt='River Image'
-          fill
-          className='object-cover' />
+        <video
+          src='https://cdn.pixabay.com/video/2022/03/28/112203-693798276_small.mp4'
+          poster='images/river.jpg'
+          preload='none'
+          autoPlay
+          loop
+          muted
+          className='h-full w-full object-cover' />
         {hasQuotes && <div className='absolute inset-0 flex justify-center items-center text-3xl italic text-white px-4'>
           <p className='md:max-w-[50%] backdrop-blur-md p-3 rounded-xl border border-white'>
             {quotes[1].quote}
@@ -75,6 +69,7 @@ export function HomeView(): ReactElement {
           </p>
         </div>}
       </div>
+
       <div className={clsx('relative w-full h-screen slide_3', styles.slider__item)}>
         <Image
           src={SunsetImage}
@@ -89,12 +84,16 @@ export function HomeView(): ReactElement {
           </p>
         </div>}
       </div>
-      <div className={clsx('relative w-full h-screen slide_4', styles.slider__item)}>
-        <Image
-          src={FlowersImage}
-          alt='Flowers Image'
-          fill
-          className='object-cover' />
+
+      <div className={clsx('relative w-full h-screen overflow-hidden slide_4', styles.slider__item)}>
+        <video
+          src='https://cdn.pixabay.com/video/2022/04/01/112626-695117479_small.mp4'
+          poster='images/azalea-flowers.png'
+          preload='none'
+          autoPlay
+          loop
+          muted
+          className='h-full w-full object-cover' />
         {hasQuotes && <div className='absolute inset-0 flex justify-center items-center text-3xl italic text-white px-4'>
           <p className='md:max-w-[50%] backdrop-blur-md p-3 rounded-xl border border-white'>
             {quotes[3].quote}

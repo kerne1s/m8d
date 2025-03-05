@@ -14,7 +14,7 @@ module.exports = [
       '**/*.cjs',
       '**/*.mjs',
       'apps/*/app.config.ts',
-      'apps/*/.next',
+      '**/.next',
     ],
   },
   ...ronasitConfig,
