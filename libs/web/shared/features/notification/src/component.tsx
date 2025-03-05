@@ -14,7 +14,7 @@ export function Notification({ title, message, onMouseEnter, onMouseLeave }: Not
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={clsx(
-        'fixed right-[60px] top-[60px] w-[280px] min-h-[80px] max-h-[140px] bg-gray-200 border border-gray-400 p-4 rounded-xl shadow-md',
+        'fixed right-[20px] md:right-[60px] top-[60px] w-[280px] min-h-[80px] max-h-[140px] bg-gray-200 border border-gray-400 p-4 rounded-xl shadow-md',
         'flex flex-col gap-2 opacity-[0.75] hover:opacity-[1] transition-opacity duration-300 ease-out',
       )}>
       <div>
