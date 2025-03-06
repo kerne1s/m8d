@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ReactElement, ReactNode } from 'react';
 import { constants } from '../../constants';
+import 'react-calendar/dist/Calendar.css';
 import '@m8d/web/shared/ui/styles/global';
 import { Providers } from './providers';
 
