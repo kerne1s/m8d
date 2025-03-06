@@ -25,6 +25,7 @@
     "paths": {
       "@m8d/web/home/features/view": ["libs/web/home/features/view/src/index.ts"],
       "@m8d/web/home/ui/wrapper": ["libs/web/home/ui/wrapper/src/index.ts"],
+      "@m8d/web/shared/features/audio-player": ["libs/web/shared/features/audio-player/src/index.ts"],
       "@m8d/web/shared/features/notification": ["libs/web/shared/features/notification/src/index.ts"],
       "@m8d/web/shared/ui/styles/global": ["libs/web/shared/ui/styles/global.scss"],
       "@m8d/web/shared/ui/styles/variables": ["libs/web/shared/ui/styles/_variables.scss"],

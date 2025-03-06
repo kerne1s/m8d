@@ -9,7 +9,7 @@ export const useNotification = (): typeof notificationService => {
     setNotification(undefined);
   };
 
-  const { timer, startTimer, resetTimer } = useTimer(5, resetNotification);
+  const { startTimer, resetTimer } = useTimer(5, resetNotification);
 
   const showNotification = (message: string): void => {
     setTimeout(() => {
@@ -22,10 +22,7 @@ export const useNotification = (): typeof notificationService => {
       return;
     }
 
-    if (!timer) {
-      resetTimer();
-    }
-
+    resetTimer();
     startTimer();
   }, [notification]);
 

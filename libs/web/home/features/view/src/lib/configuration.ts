@@ -1,10 +1,12 @@
+import { PlaylistItem } from '@m8d/web/shared/features/audio-player';
+
 export interface QuoteItem {
   id: number;
   quote: string;
   author?: string;
 }
 
-export const homeViewConfig: { quotes: Array<QuoteItem> } = {
+export const homeViewConfig: { quotes: Array<QuoteItem>; playlist: Array<PlaylistItem>; mediaUrl: string } = {
   quotes: [
     { id: 1, quote: 'There is no limit to what we, as women, can accomplish.', author: 'Michelle Obama' },
     { id: 2, quote: 'A woman is the full circle. Within her is the power to create, nurture, and transform.', author: `Diane Mariechild. Happy Women's Day!` },
@@ -81,5 +83,33 @@ export const homeViewConfig: { quotes: Array<QuoteItem> } = {
     { id: 73, quote: '“We want deeper sincerity of motive, a greater courage in speech, and earnestness in action.”', author: 'Sarojini Naidu' },
     { id: 74, quote: '“The power you have is to be the best version of yourself you can be, so you can create a better world.”', author: 'Ashley Rickards.' },
     { id: 75, quote: '“The test for whether or not you can hold a job should not be the arrangement of your chromosomes.”', author: 'Bella Abzug' },
-  ]
+  ],
+  playlist: [
+    {
+      title: 'Theme 1',
+      artist: 'Unknown artist',
+      src: 'https://cdn.pixabay.com/audio/2022/08/23/audio_d16737dc28.mp3',
+    },
+    {
+      title: 'Goldn',
+      artist: 'Praz Khanal',
+      src: 'https://cdn.pixabay.com/audio/2022/08/04/audio_2dde668d05.mp3',
+    },
+    {
+      title: 'Phir Milainge',
+      artist: 'Redazx',
+      src: 'https://cdn.pixabay.com/audio/2022/08/03/audio_54ca0ffa52.mp3',
+    },
+    {
+      title: 'Resistance',
+      artist: 'Gvidon',
+      src: 'https://cdn.pixabay.com/audio/2022/07/25/audio_3266b47d61.mp3',
+    },
+    {
+      title: 'Desperate Decision',
+      artist: 'Aleksei Chistilin',
+      src: 'https://cdn.pixabay.com/audio/2022/08/02/audio_884fe92c21.mp3',
+    },
+  ],
+  mediaUrl: 'https://pixabay.com',
 }

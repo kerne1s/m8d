@@ -1,0 +1,9 @@
+{
+  "name": "web/shared/features/audio-player",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/shared/features/audio-player/src",
+  "projectType": "library",
+  "tags": ["app:web", "scope:shared", "type:features"],
+  "// targets": "to see all targets run: nx show project web/shared/features/audio-player --web",
+  "targets": {}
+}
