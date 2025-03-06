@@ -8,10 +8,12 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { ReactElement, useEffect, useRef } from 'react';
 import Snowfall from 'react-snowfall';
+import { AppAudioPlayer } from '@m8d/web/shared/features/audio-player';
 import { useNotification } from '@m8d/web/shared/features/notification';
 import SunriseImage from './assets/sunrise.jpg';
 import SunsetImage from './assets/sunset.jpg';
 import styles from './component.module.scss';
+import { homeViewConfig } from './configuration';
 import { useRandomQuotes } from './hooks';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -30,8 +32,16 @@ export function HomeView(): ReactElement {
     });
   }, { scope: sliderRef });
 
+  const checkMediaServices = (): void => {
+    fetch(homeViewConfig.mediaUrl, { mode: 'no-cors' })
+      .catch(() => {
+        showNotification(t('NOTIFICATIONS.TEXT_MEDIA_SERVICES_ERROR'));
+      });
+  };
+
   useEffect(() => {
     showNotification(t('NOTIFICATIONS.TEXT_WELCOME'));
+    checkMediaServices();
   }, []);
 
   return (
@@ -103,6 +113,8 @@ export function HomeView(): ReactElement {
         </div>}
       </div>
       {notificationComponent}
+
+      <AppAudioPlayer playList={homeViewConfig.playlist} shouldAutoplay />
     </div>
   );
 }
