@@ -20,7 +20,8 @@
     "react": "19.0.0",
     "react-calendar": "^5.1.0",
     "react-dom": "19.0.0",
-    "react-snowfall": "^2.2.0"
+    "react-snowfall": "^2.2.0",
+    "react-typewriter-effect": "^1.1.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.6",

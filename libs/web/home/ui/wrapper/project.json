@@ -1,9 +1,0 @@
-{
-  "name": "web/home/ui/wrapper",
-  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/web/home/ui/wrapper/src",
-  "projectType": "library",
-  "tags": ["app:web", "scope:home", "type:ui"],
-  "// targets": "to see all targets run: nx show project web/home/ui/wrapper --web",
-  "targets": {}
-}

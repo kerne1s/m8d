@@ -34,5 +34,9 @@
   {
     "sourceTag": "scope:home",
     "onlyDependOnLibsWithTags": ["scope:home", "scope:shared"]
+  },
+  {
+    "sourceTag": "scope:secret-garden",
+    "onlyDependOnLibsWithTags": ["scope:secret-garden", "scope:shared"]
   }
 ]
