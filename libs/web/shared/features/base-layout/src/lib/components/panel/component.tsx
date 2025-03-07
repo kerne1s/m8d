@@ -33,7 +33,11 @@ export function HomePanel({ isHomeClosed, onClosePressed }: HomePanelProps): Rea
         <span className='text-lg font-bold text-gray-500'>{t('TEXT_APP')}</span>
         <Calendar isOpen={isCalendarOpen} onToggle={toggleCalendar} />
         <button onClick={onClosePressed}>
-          <Image src={isHomeClosed ? LoginIcon : LogoutIcon} alt='Close icon' width={24} height={24} />
+          <Image
+            src={isHomeClosed ? LoginIcon : LogoutIcon}
+            alt='Close icon'
+            width={24}
+            height={24} />
         </button>
       </div>
     </aside>

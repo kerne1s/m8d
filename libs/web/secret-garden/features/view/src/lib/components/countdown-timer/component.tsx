@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import { ReactNode, useEffect, useState } from 'react';
+import { secretGardenConfig } from '../../configuration';
 
 interface CountdownTimerProps {
   className?: string;
@@ -9,11 +10,11 @@ interface CountdownTimerProps {
 
 export function CountdownTimer({ className }: CountdownTimerProps): ReactNode {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [targetDate, setTargetDate] = useState(new Date('2025-03-08T19:00:00'));
+  const [targetDate, setTargetDate] = useState(new Date(secretGardenConfig.eventDate));
   const [isMounted, setIsMounted] = useState(false);
 
   const getTimeRemaining = (): { days: number; hours: number; minutes: number; seconds: number } => {
-    const totalTime = targetDate - currentTime;
+    const totalTime = targetDate.getTime() - currentTime.getTime();
     const seconds = Math.floor((totalTime / 1000) % 60);
     const minutes = Math.floor((totalTime / (1000 * 60)) % 60);
     const hours = Math.floor((totalTime / (1000 * 60 * 60)) % 24);
