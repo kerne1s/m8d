@@ -1,12 +1,12 @@
 import { ReactElement } from 'react';
-import { HomeView } from '@m8d/web/home/features/view';
+import { SecretGardenView } from '@m8d/web/secret-garden/features/view';
 import { BaseLayout } from '@m8d/web/shared/features/base-layout';
 
 export default function Index(): ReactElement {
   return (
     <main>
       <BaseLayout>
-        <HomeView />
+        <SecretGardenView />
       </BaseLayout>
     </main>
   );

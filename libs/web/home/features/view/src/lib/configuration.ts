@@ -140,6 +140,11 @@ export const homeViewConfig: { quotes: Array<QuoteItem>; playlist: Array<Playlis
       artist: 'Aleksei Chistilin',
       src: 'https://cdn.pixabay.com/audio/2022/08/02/audio_884fe92c21.mp3',
     },
+    {
+      title: 'Dreams',
+      artist: 'Hamidshax',
+      src: 'https://fine.sunproxy.net/file/dEdKYURYeXlIeVpNdkNQNkVlSG4wTURIb1ZFWTdNclFrWEc0cE9XWU8zblFzVDU5NXovNlZJckMrWjFSTEk2cG50Ukd6OVI0WVdpeWpKcnIxbFp5Q1QrcDlpcVRDTVBFZTJRU3ZmenBhVm89/Hamidshax_Music_-_Hamidshax_-_Dreams_Original_Mix_(SkySound.cc).mp3',
+    }
   ],
   mediaUrl: 'https://pixabay.com',
 }

@@ -156,15 +156,15 @@ export function AppAudioPlayer({ playList, shouldAutoplay }: AppAudioPlayerProps
           boxShadow:
             'rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset',
         }}>
-        <div className='flex-grow'>
-          <div className='flex items-center justify-between mb-2'>
-            <div className='flex flex-col'>
-              <div className='text-white text-base font-semibold'>{playList[currentTrackIndex]?.title}</div>
+        <div className='flex-grow overflow-hidden'>
+          <div className='flex items-center justify-between gap-2 mb-2'>
+            <div className='flex flex-col overflow-hidden'>
+              <div className='text-white text-base font-semibold truncate whitespace-nowrap'>{playList[currentTrackIndex]?.title}</div>
               <div className='text-gray-300 text-sm'>{playList[currentTrackIndex]?.artist}</div>
             </div>
             <button
               onClick={handlePlayPause}
-              className='w-8 h-8 items-center justify-center flex rounded-full bg-gray-500 border border-white'>
+              className='w-8 h-8 items-center justify-center flex shrink-0 rounded-full bg-gray-500 border border-white'>
               {isPlaying ? PauseIcon : PlayIcon}
             </button>
           </div>

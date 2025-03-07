@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { PropsWithChildren, ReactElement, useState } from 'react';
 import { HomeFarewell, HomePanel } from './components';
 
-export function HomeWrapper({ children }: PropsWithChildren): ReactElement {
+export function BaseLayout({ children }: PropsWithChildren): ReactElement {
   const [isHomeClosed, setIsHomeClosed] = useState(false);
 
   const toggleCloseHome = (): void => {

@@ -1,0 +1,9 @@
+{
+  "name": "web/secret-garden/features/view",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/secret-garden/features/view/src",
+  "projectType": "library",
+  "tags": ["app:web", "scope:secret-garden", "type:features"],
+  "// targets": "to see all targets run: nx show project web/secret-garden/features/view --web",
+  "targets": {}
+}
