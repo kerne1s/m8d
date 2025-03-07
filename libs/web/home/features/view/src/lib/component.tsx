@@ -13,6 +13,7 @@ import { useNotification } from '@m8d/web/shared/features/notification';
 import SunriseImage from './assets/sunrise.jpg';
 import SunsetImage from './assets/sunset.jpg';
 import styles from './component.module.scss';
+import { ScrollIcon } from './components';
 import { homeViewConfig } from './configuration';
 import { useRandomQuotes } from './hooks';
 
@@ -20,7 +21,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function HomeView(): ReactElement {
   const t = useTranslations('home.HOME');
-  const quotes = useRandomQuotes(4);
+  const quotes = useRandomQuotes(4, 30000);
   const hasQuotes = !!quotes.length;
   const sliderRef = useRef<HTMLDivElement>(null);
   const { showNotification, notificationComponent} = useNotification();
@@ -32,6 +33,18 @@ export function HomeView(): ReactElement {
     });
   }, { scope: sliderRef });
 
+  const checkUserCountry = (): void => {
+    fetch('https://get.geojs.io/v1/ip/country.json')
+      .then(async (response) => {
+        const data = await response.json();
+
+        if (data.country === 'RU') {
+          showNotification('Some media services are not available in your country.');
+        }
+      })
+      .catch();
+  };
+
   const checkMediaServices = (): void => {
     fetch(homeViewConfig.mediaUrl, { mode: 'no-cors' })
       .catch(() => {
@@ -41,6 +54,7 @@ export function HomeView(): ReactElement {
 
   useEffect(() => {
     showNotification(t('NOTIFICATIONS.TEXT_WELCOME'));
+    checkUserCountry();
     checkMediaServices();
   }, []);
 
@@ -56,10 +70,11 @@ export function HomeView(): ReactElement {
         {hasQuotes && <div className='absolute inset-0 flex justify-center items-center text-3xl italic text-white px-4'>
           <p className='md:max-w-[50%] animate-fade-in backdrop-blur-md p-3 rounded-xl border border-white'>
             {quotes[0].quote}
-            {quotes[0].author && ' - '}
+            {quotes[0].author && ' – '}
             <span className='not-italic'>{quotes[0].author}</span>
           </p>
         </div>}
+        <ScrollIcon className='absolute bottom-0 left-0 right-0 flex justify-center' />
       </div>
 
       <div className={clsx('relative w-full h-screen slide_2', styles.slider__item)}>
@@ -74,7 +89,7 @@ export function HomeView(): ReactElement {
         {hasQuotes && <div className='absolute inset-0 flex justify-center items-center text-3xl italic text-white px-4'>
           <p className='md:max-w-[50%] backdrop-blur-md p-3 rounded-xl border border-white'>
             {quotes[1].quote}
-            {quotes[1].author && ' - '}
+            {quotes[1].author && ' – '}
             <span className='not-italic'>{quotes[1].author}</span>
           </p>
         </div>}
@@ -89,7 +104,7 @@ export function HomeView(): ReactElement {
         {hasQuotes && <div className='absolute inset-0 flex justify-center items-center text-3xl italic text-white px-4'>
           <p className='md:max-w-[50%] backdrop-blur-md p-3 rounded-xl border border-white'>
             {quotes[2].quote}
-            {quotes[2].author && ' - '}
+            {quotes[2].author && ' – '}
             <span className='not-italic'>{quotes[2].author}</span>
           </p>
         </div>}
@@ -107,7 +122,7 @@ export function HomeView(): ReactElement {
         {hasQuotes && <div className='absolute inset-0 flex justify-center items-center text-3xl italic text-white px-4'>
           <p className='md:max-w-[50%] backdrop-blur-md p-3 rounded-xl border border-white'>
             {quotes[3].quote}
-            {quotes[3].author && ' - '}
+            {quotes[3].author && ' – '}
             <span className='not-italic'>{quotes[3].author}</span>
           </p>
         </div>}
