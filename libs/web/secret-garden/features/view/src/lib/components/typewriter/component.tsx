@@ -1,13 +1,15 @@
 'use client';
 
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import { ReactNode, useEffect, useState } from 'react';
-import TypeWriterEffect from 'react-typewriter-effect';
 
 interface TypewriterProps {
   text: string;
   className?: string;
 }
+
+const TypeWriterEffect = dynamic(() => import('react-typewriter-effect'), { ssr: false });
 
 export function Typewriter({ text, className }: TypewriterProps): ReactNode {
   const [isMounted, setIsMounted] = useState(false);
