@@ -6,7 +6,7 @@ interface Playlist {
 }
 
 export const secretGardenConfig: { playlist: Playlist; eventDate: string; quotes: Array<string> } = {
-  eventDate: '2025-03-08T10:00:00',
+  eventDate: '2025-03-08T19:00:00',
   playlist: {
     beforeEvent: [
       {
