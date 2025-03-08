@@ -27,9 +27,9 @@ export const secretGardenConfig: { playlist: Playlist; eventDate: string; quotes
     ],
     afterEvent: [
       {
-        src: 'https://fine.sunproxy.net/file/YjMrRHkreVNFVGlsaTRPRHIzOGlzdmVuTTN5VytGMm9ndW1jbGd3RlNWMEZGbkZqUkVibC9nUTY1QUpHV09YR2tuRGFOZHNxdEUvM3ZXdTBmTGg0L0Q5dmpETGxSdjZYLzFLRC9YMHkzSnc9/Imagine_Dragons_-_Bad_Liar_(SkySound.cc).mp3',
-        title: 'Bad Liar',
-        artist: '[Hidden]',
+        src: 'https://fine.sunproxy.net/file/YjMrRHkreVNFVGlsaTRPRHIzOGlzdmVuTTN5VytGMm9ndW1jbGd3RlNWMEZGbkZqUkVibC9nUTY1QUpHV09YR3dHRjhkdU5Ec2dWRGhRYXlZTnFaOVNKci9hdWJXUzBBNzh5ODQ2OUlFUGs9/-_(SkySound.cc).mp3',
+        title: '墨尔本的秋天',
+        artist: '(吉他独奏版)',
       },
       {
         src: 'https://fine.sunproxy.net/file/YjMrRHkreVNFVGlsaTRPRHIzOGlzdmVuTTN5VytGMm9ndW1jbGd3RlNWMEZGbkZqUkVibC9nUTY1QUpHV09YR2xLeHR2Tm9IVlJHRSs0alIzbjBoc3VybEtOdHZBczZKaTRDcGxZT3kyaXc9/P_nk_-_Try_(SkySound.cc).mp3',
@@ -39,6 +39,11 @@ export const secretGardenConfig: { playlist: Playlist; eventDate: string; quotes
       {
         src: 'https://fine.sunproxy.net/file/YjMrRHkreVNFVGlsaTRPRHIzOGlzdmVuTTN5VytGMm9ndW1jbGd3RlNWMUxMVWJPOG5zb05YUGtXdjBhdUovelpGcURkQkYyVmwxdjZuMk9lOXJUZmpOQm1OU2RMVWkveHRRT2I4TEZJVEU9/Indila_-_Love_Story_Version_Orchestrale_(SkySound.cc).mp3',
         title: 'Love Story',
+        artist: '[Hidden]',
+      },
+      {
+        src: 'https://fine.sunproxy.net/file/YjMrRHkreVNFVGlsaTRPRHIzOGlzdmVuTTN5VytGMm9ndW1jbGd3RlNWMEZGbkZqUkVibC9nUTY1QUpHV09YR2tuRGFOZHNxdEUvM3ZXdTBmTGg0L0Q5dmpETGxSdjZYLzFLRC9YMHkzSnc9/Imagine_Dragons_-_Bad_Liar_(SkySound.cc).mp3',
+        title: 'Bad Liar',
         artist: '[Hidden]',
       },
     ],
